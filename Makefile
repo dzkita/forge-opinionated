@@ -10,7 +10,7 @@ clean  :; forge clean
 # Remove modules
 remove :; rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf .node_modules && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
-install: forge install foundry-rs/forge-std --no-commit
+install: npm install&& forge install foundry-rs/forge-std --no-commit
 
 
 install-defi :; install && forge install https://github.com/vectorized/solady --no-commit && forge install https://github.com/smartcontractkit/chainlink-brownie-contracts@v1.1.0 --no-commit forge install https://github.com/pyth-network/pyth-sdk-solidity --no-commit
